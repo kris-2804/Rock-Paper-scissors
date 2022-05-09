@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap");
+:root {
+  --main-bg: radial-gradient(
+    circle at 100%,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --HeaderOutline: hsl(217, 16%, 45%);
+  --ScissorsGradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --PaperGradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --RockGradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --LizardGradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  --Cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+}
+
+html {
+  background: var(--main-bg);
+  font-family: "Barlow Semi Condensed", monospace !important;
+}
+
+.score {
+  color: var(--dark-text);
+  border-radius: 10px;
+}
+
+.header {
+  border: 3px solid var(--HeaderOutline);
+  border-radius: 10px;
+}
+
+.pentagon {
+  background: url(/ASSETS/bg-pentagon.svg);
+  background-position: 50% 68%;
+  background-repeat: no-repeat;
+  background-size: 350px;
+  height: 70vh;
+  min-height: 70vh;
+  width: 100vw;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.pentagon > div {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 1px 1px #e9e7e7;
+          box-shadow: inset 1px 1px #e9e7e7;
+  cursor: pointer;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.pentagon > div:hover {
+  -webkit-box-shadow: 1px 1px 10px 5px #fff;
+          box-shadow: 1px 1px 10px 5px #fff;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.pentagon > div::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  z-index: -1;
+  height: 120%;
+  border-radius: 50%;
+}
+
+.pentagon .rock {
+  top: 69%;
+  right: 37%;
+}
+
+.pentagon .rock::after {
+  background: var(--RockGradient);
+}
+
+.pentagon .paper {
+  top: 25.2%;
+  right: 33.7%;
+}
+
+.pentagon .paper::after {
+  background: var(--PaperGradient);
+}
+
+.pentagon .scissors {
+  top: 5px;
+}
+
+.pentagon .scissors::after {
+  background: var(--ScissorsGradient);
+}
+
+.pentagon .spock {
+  top: 25.2%;
+  left: 33.7%;
+}
+
+.pentagon .spock::after {
+  background: var(--Cyan);
+}
+
+.pentagon .lizard {
+  top: 69%;
+  left: 37%;
+}
+
+.pentagon .lizard::after {
+  background: var(--LizardGradient);
+}
+
+section.rules button {
+  background: transparent;
+  border: 2px solid var(--HeaderOutline);
+  letter-spacing: 2px;
+  color: white;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .pentagon > div {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+button.p-2 {
+  border: 2px solid var(--HeaderOutline);
+  border-radius: 2px;
+}
+/*# sourceMappingURL=style.css.map */

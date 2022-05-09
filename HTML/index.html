@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <script src="/JS/app.js" defer></script>
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <body class="max-w-[1366px] min-w-[375px]">
+    <header>
+      <nav>
+        <div
+          class="header max-w-[500px] flex mx-auto my-2 p-2 items-center justify-between"
+        >
+          <img
+            src="/ASSETS/logo-bonus.svg"
+            alt="Logo"
+            class="object-contain"
+            width="100"
+          />
+          <div class="score w-[80px] h-[80px] bg-white">
+            <h3 class="uppercase tracking-wide text-center p-2">score</h3>
+            <h4 class="tracking-wider text-center p-2 text-2xl" data-score>
+              0
+            </h4>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="text-white flex justify-between w-[50%] pt-2 mx-auto text-2xl tracking-wider hidden">
+        <h3>YOU PICKED</h3>
+        <h3>THE HOUSE PICKED</h3>
+      </div>
+      <div class="pentagon" data-pentagon>
+        <div class="rock flex items-center justify-center" data-rock id="rock">
+          <img src="/ASSETS/icon-rock.svg" alt="" />
+        </div>
+        <div
+          class="paper flex items-center justify-center"
+          data-paper
+          id="paper"
+        >
+          <img src="/ASSETS/icon-paper.svg" alt=""  />
+        </div>
+        <div
+          class="scissors flex items-center justify-center"
+          data-scissors
+          id="scissors"
+        >
+          <img src="/ASSETS/icon-scissors.svg" alt="" />
+        </div>
+        <div
+          class="lizard flex items-center justify-center"
+          data-lizard
+          id="lizard"
+        >
+          <img src="/ASSETS/icon-lizard.svg" alt=""  />
+        </div>
+        <div
+          class="spock flex items-center justify-center"
+          data-spocks
+          id="spock"
+        >
+          <img src="/ASSETS/icon-spock.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="rules">
+      <button class="p-1 rounded-md z-20" data-rules>RULES</button>
+    </section>
+    <div
+      class="rules-container w-[375px] mx-auto rounded bg-white m-2 flex-col h-full absolute flex items-center justify-between inset-0 z-20 hidden"
+    >
+      <img
+        src="/ASSETS/icon-close.svg"
+        alt=" Close button"
+        data-close
+        class="self-end justify-self-start p-4 cursor-pointer"
+      />
+      <img
+        src="/ASSETS/image-rules-bonus.svg"
+        alt="Rules of the game"
+        class="object-contain min-h-[80vh]"
+      />
+    </div>
+   
+    <div class="w-[100vw] h-[100vh] absolute flex  flex-col inset-0 hidden items-center justify-center bg-[transparent]" data-resultdiv>
+      <h2 class="py-2 text-white text-2xl tracking-wider"></h2>
+      <button class="p-2 text-white" onclick="Reset(event)">PLAY AGAIN</button>
+    </div>
+  </body>
+</html>

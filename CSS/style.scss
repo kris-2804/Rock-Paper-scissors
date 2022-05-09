@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap");
+:root {
+  --main-bg: radial-gradient(
+    circle at 100%,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --HeaderOutline: hsl(217, 16%, 45%);
+  --ScissorsGradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --PaperGradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --RockGradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --LizardGradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  --Cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+}
+
+html {
+  background: var(--main-bg);
+  font-family: "Barlow Semi Condensed", monospace !important;
+}
+.score {
+  color: var(--dark-text);
+  border-radius: 10px;
+}
+.header {
+  border: 3px solid var(--HeaderOutline);
+  border-radius: 10px;
+}
+
+.pentagon {
+  background: url(/ASSETS/bg-pentagon.svg);
+  background-position: 50% 68%;
+
+  background-repeat: no-repeat;
+  background-size: 350px;
+
+  height: 70vh;
+  min-height: 500px;
+  width: 100vw;
+  min-width: 400px;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  & > div {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px rgb(233, 231, 231);
+    cursor: pointer;
+
+    transition: all 200ms;
+    &:hover  {
+      box-shadow:  1px 1px 10px 5px #fff;
+      transform: scale(1.1);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 120%;
+      z-index: -1;
+      height: 120%;
+
+      border-radius: 50%;
+    }
+  }
+  .rock {
+    top: 69%;
+    right: 37%;
+    &::after {
+      background: var(--RockGradient);
+    }
+  }
+  .paper {
+    &::after {
+      background: var(--PaperGradient);
+    }
+    top: 25.2%;
+    right: 33.7%;
+  }
+  .scissors {
+    &::after {
+      background: var(--ScissorsGradient);
+    }
+    top: 5px;
+  }
+  .spock {
+    &::after {
+      background: var(--Cyan);
+    }
+    top: 25.2%;
+    left: 33.7%;
+  }
+  .lizard {
+    &::after {
+      background: var(--LizardGradient);
+    }
+    top: 69%;
+    left: 37%;
+  }
+}
+
+section.rules button {
+  background: transparent;
+  border: 2px solid var(--HeaderOutline);
+  letter-spacing: 2px;
+  color: white;
+
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: max-content;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .pentagon > div {
+    height: 50px;
+    width: 50px;
+  }
+  .rock{
+    top: 69%;
+    right: 7%;
+  }
+}
+button.p-2{
+  border: 2px solid var(--HeaderOutline);
+  border-radius: 2px;
+}
