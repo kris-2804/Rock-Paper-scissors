@@ -55,9 +55,15 @@ itemsArr.forEach((elem, index, arr) => {
     Array.from(elem.parentElement.children).forEach((elements) => {
       elements.style.display = "none";
     });
-    elem.style.removeProperty("display");
-    elem.style.top = "25.2%";
-    elem.style.left = "33.7%";
+    if (window.innerWidth < 450) {
+      elem.style.removeProperty("display");
+      elem.style.top = "45%";
+      elem.style.left = "45px";
+    } else {
+      elem.style.removeProperty("display");
+      elem.style.top = "25.2%";
+      elem.style.left = "33.7%";
+    }
 
     computerInput = getComputerInput();
     while (computerInput == userInput) {
@@ -65,18 +71,25 @@ itemsArr.forEach((elem, index, arr) => {
     }
 
     let tempInput = document.getElementById(computerInput);
-    console.log;
+  
     tempInput.style.removeProperty("display");
-    tempInput.style.removeProperty("top");
-    tempInput.style.removeProperty("bottom");
-    tempInput.style.removeProperty("left");
-    tempInput.style.removeProperty("right");
+  
+  
+    console.log(tempInput.style.top)
+    if (window.innerWidth < 450) {              
+      tempInput.style.top = "45%";
+      tempInput.style.right = "45px";
+      tempInput.style.left = "unset";
+      tempInput.style.bottom = "unset";
 
-    tempInput.style.top = "25.2%";
-    tempInput.style.right = "33.7%";
+    }
+    else{
+      tempInput.style.top = "25.2%";
+      tempInput.style.right = "33.7%";
 
-    tempInput.style.left = "unset";
-    tempInput.style.bottom = "unset";
+      tempInput.style.left = "unset";
+      tempInput.style.bottom = "unset";
+    }
     inputdivider.classList.toggle("hidden");
     computeResult();
   });

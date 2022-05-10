@@ -36,10 +36,9 @@ html {
   background-size: 350px;
 
   height: 70vh;
-  min-height: 500px;
+ 
   width: 100vw;
-  min-width: 400px;
-  max-width: 1200px;
+  
   position: relative;
   display: flex;
   align-items: center;
@@ -124,12 +123,40 @@ section.rules button {
     height: 50px;
     width: 50px;
   }
-  .rock{
-    top: 69%;
-    right: 7%;
+  .pentagon {
+    background-size: 280px;
+    & .rock{
+      right: 67px;
+      top: 75%;
+    }
+    & .lizard{
+      left: 67px;
+      top: 75%;
+    }
+    & .spock{
+      left: 45px;
+      top: 45%;
+    }
+    & .paper{
+    right: 45px;
+    top: 45%;
+    }
+    & .scissors{
+      top: 26%;
+    }
+  }
+  section.main .selection{
+    width: 100vw;
+    margin: 2px !important;
+    font-size: 1em;
   }
 }
 button.p-2{
   border: 2px solid var(--HeaderOutline);
   border-radius: 2px;
+  transition: all 200ms;
+  &:hover{
+    transform: scale(1.09);
+  }
 }
+

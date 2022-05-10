@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/ASSETS/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/CSS/style.css" />
     <script src="/JS/app.js" defer></script>
@@ -33,11 +37,11 @@
     </header>
 
     <section class="main">
-      <div class="text-white flex justify-between w-[50%] pt-2 mx-auto text-2xl tracking-wider hidden">
+      <div class="selection text-white flex justify-between w-[50%] pt-2 mx-auto text-2xl tracking-wider hidden">
         <h3>YOU PICKED</h3>
         <h3>THE HOUSE PICKED</h3>
       </div>
-      <div class="pentagon" data-pentagon>
+      <div class="pentagon pt-3" data-pentagon>
         <div class="rock flex items-center justify-center" data-rock id="rock">
           <img src="/ASSETS/icon-rock.svg" alt="" />
         </div>
@@ -92,7 +96,7 @@
     </div>
    
     <div class="w-[100vw] h-[100vh] absolute flex  flex-col inset-0 hidden items-center justify-center bg-[transparent]" data-resultdiv>
-      <h2 class="py-2 text-white text-2xl tracking-wider"></h2>
+      <h2 class="py-2 text-red-600 text-2xl tracking-wider"></h2>
       <button class="p-2 text-white" onclick="Reset(event)">PLAY AGAIN</button>
     </div>
   </body>
